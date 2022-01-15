@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <S.HeaderWrapper>
       <div className="list-container">
-        <img src="" alt="logo" />
+        <img src="/assets/logo.svg" alt="logo" />
       </div>
       <div className="list-wrap">
         <div className="list-box">

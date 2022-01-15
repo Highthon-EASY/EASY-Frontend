@@ -8,7 +8,11 @@ export const HeaderWrapper = styled.div`
   height: 60px;
   display: flex;
   align-items: center;
-  z-index: 3;
+  z-index: 10;
+
+  img {
+    margin-left: 30px;
+  }
 
   .list-wrap {
     width: 70%;
