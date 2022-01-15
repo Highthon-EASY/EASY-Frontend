@@ -3,7 +3,7 @@ import * as S from "./style";
 import { CategorySelector } from "../constant/interview";
 import DaumPost from "./DaumPost";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { modalState } from "../../module/atom/interview";
+import { locationState, modalState } from "../../module/atom/interview";
 import { reviewData, reviewListState } from "../../module/atom/interview";
 import { postModalState } from "../../module/atom/map";
 import { ToastSuccess } from "../../lib/hook/toastHook";
@@ -28,6 +28,13 @@ const InterviewPage = () => {
   useEffect(() => {
     console.log(input);
   }, [input, location]);
+
+  const onsubmit = (e: any) => {
+    e.preventDefault();
+
+    setModal(false);
+    ToastSuccess("면접 후기가 등록되었습니다.");
+  };
 
   return (
     <S.Container modal={modal}>
@@ -95,9 +102,8 @@ const InterviewPage = () => {
         </S.ReviewInputContainer>
         <S.BtnWrapper>
           <S.PostBtn
-            onClick={() => {
-              setModal(false);
-              ToastSuccess("면접 후기가 등록되었습니다.");
+            onClick={(e) => {
+              onsubmit(e);
             }}
           >
             등록 및 작성
