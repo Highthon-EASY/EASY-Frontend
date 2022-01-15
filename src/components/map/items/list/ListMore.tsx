@@ -1,6 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../../../../module/atom/map";
+import QuestionItem from "./QuestionItem";
 import * as S from "./style";
 
 const ListMore = () => {
@@ -48,7 +49,7 @@ const ListMore = () => {
         <span>면접 질문</span>
         <ol className="interview-list">
           {list.map((item, idx) => (
-            <li key={idx}>{item.title}</li>
+            <QuestionItem key={idx} item={item} />
           ))}
         </ol>
       </div>
