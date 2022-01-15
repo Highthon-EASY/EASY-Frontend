@@ -157,12 +157,13 @@ export const empData = [
   },
   {
     id: 1,
-    title: "면접에서 자주 물어보는 질문 리스트 TOP 3",
+    title: "도보 3분거리 회사 vs 지하철 12정거장 회사",
     name: "익명의 사용자",
     content: [
-      { subContent: "1. 1분 자기소개" },
-      { subContent: "2. 회사에 지원한 동기는?" },
-      { subContent: "3. 직무를 위해 어떤 자기계발을 하였는지?" },
+      { subContent: "근데 후자가 연봉 500 더 쎔" },
+      { subContent: "전자는 식비지원 안해줌" },
+      { subContent: "근데 난 집순이라 전자 택할거야" },
+      { subContent: "점심시간에 집가서 집밥먹어야지" },
     ],
     date: "2일 전",
   },
