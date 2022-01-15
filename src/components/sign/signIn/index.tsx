@@ -29,6 +29,7 @@ const SignPage = () => {
       <S.SignBox>
         <img src="" alt="logo" />
         <div className="input-box">
+          <div className="test"></div>
           <S.NameInput
             border={name}
             type="text"
