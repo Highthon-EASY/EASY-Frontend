@@ -8,3 +8,10 @@ export const MapContainer = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export const ListWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 30%;
+`;
