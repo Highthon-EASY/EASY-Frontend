@@ -6,7 +6,7 @@ interface Props {
 }
 
 const FeedItem = ({ item }: Props) => {
-  const [heart, setHeart] = useState<boolean>(false);
+  const [heart, setHeart] = useState<boolean>(item.heart);
 
   return (
     <S.FeedItem>

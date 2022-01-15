@@ -22,8 +22,17 @@ export const HeaderWrapper = styled.div`
 
     .list-box {
       display: flex;
+      align-items: center;
+      margin-right: 20px;
 
-      & div {
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      & a {
+        text-decoration: none;
+        color: black;
         margin: 0 30px;
         width: fit-content;
         text-align: center;

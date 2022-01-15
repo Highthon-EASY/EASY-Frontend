@@ -1,26 +1,30 @@
 import styled from "@emotion/styled";
 
-export const ModalWrapper = styled.div`
-  display: flex;
+interface Props {
+  modal?: boolean;
+}
+
+export const ModalWrapper = styled.div<Props>`
+  display: ${({ modal }) => (modal ? "flex" : "none")};
   position: absolute;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<Props>`
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: ${({ modal }) => (modal ? "flex" : "none")};
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   background: rgba(107, 107, 107, 0.58);
 `;
 
 export const ReviewPostModal = styled.div`
-  width: 796px;
-  height: 610px;
+  width: 45%;
+  height: 60%;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 40px;
   margin: 50px 0;
 `;
@@ -40,7 +44,6 @@ export const CompanyInfo = styled.div`
 
 export const CompanyInput = styled.input`
   width: 100%;
-  height: 40px;
   margin: 20px 10px;
   padding: 10px;
   border-radius: 5px;
@@ -71,7 +74,7 @@ export const ModalSelector = styled.select`
 export const ReviewInput = styled.input`
   height: 40px;
   margin: 0 10px 20px 10px;
-  padding: 10px;
+  // padding: 10px;
   border-radius: 5px;
   background-color: white;
   border: 1px solid #bdbdbd;
@@ -107,13 +110,15 @@ export const BtnWrapper = styled.div`
 `;
 
 export const PostBtn = styled.button`
-  width: 350px;
-  height: 50px;
+  width: 97%;
+  padding: 10px;
+  box-sizing: border-box;
+  //height: 50px;
   background: linear-gradient(90deg, #5391fc 0%, #514cf6 100%);
   border-radius: 5px;
   border: none;
   color: white;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
 `;

@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
 import "./App.css";
 import {
   FeedPage,
@@ -13,6 +15,7 @@ import {
 function App() {
   return (
     <BrowserRouter>
+    <ToastContainer />
       <Routes>
         <Route path="/" element={<MapPage />} />
         <Route path="/signin" element={<SignPage />} />

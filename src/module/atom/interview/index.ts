@@ -23,3 +23,8 @@ export const reviewData = atom<InterviewType>({
     interview3: "",
   },
 });
+
+export const locationState = atom<string>({
+  key: "locationState",
+  default: "",
+});

@@ -1,8 +1,55 @@
 import styled from "@emotion/styled";
 
+export const FeedContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ContentWrapper = styled.div`
+  witdh: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const CategoryList = styled.div`
+  width: 30%;
+  height: 100vh;
+  background: white;
+  border: 1px solid red;
+
+  ul {
+    margin-top: 60px;
+
+    li:nth-child(1) {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+      padding: 30px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ececec;
+
+      span {
+        margin-left: 10px;
+        font-size: 12px;
+        color: #989898;
+      }
+    }
+  }
+`;
+
 export const FeedWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 60px;
 `;
 
 export const FeedItem = styled.div`

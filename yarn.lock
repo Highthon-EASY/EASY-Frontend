@@ -1901,7 +1901,7 @@
 
 "@types/react@*", "@types/react@^17.0.38":
   version "17.0.38"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.38.tgz#f24249fefd89357d5fa71f739a686b8d7c7202bd"
+  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.38.tgz"
   integrity sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==
   dependencies:
     "@types/prop-types" "*"
@@ -7155,7 +7155,7 @@ react-app-polyfill@^3.0.0:
 
 react-daum-postcode@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-daum-postcode/-/react-daum-postcode-3.0.1.tgz#1d87145a4c82fe107ad041c855b857e45c0555e1"
+  resolved "https://registry.npmjs.org/react-daum-postcode/-/react-daum-postcode-3.0.1.tgz"
   integrity sha512-TBA6p+5yFy4YrH3jneNPyqNR+9igCb/XhQfnDBOABX38Hgf4n5EMmXf3NZptPSqg3UldHQ+8HPHCJ5L6zjskkg==
   dependencies:
     prop-types "^15.7.2"

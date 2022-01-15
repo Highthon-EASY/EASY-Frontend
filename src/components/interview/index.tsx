@@ -2,40 +2,42 @@ import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { CategorySelector } from "../constant/interview";
 import DaumPost from "./DaumPost";
-import { useSetRecoilState, useRecoilState } from "recoil";
-import { modalState } from "../../module/atom/interview";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { locationState, modalState } from "../../module/atom/interview";
 import { reviewData, reviewListState } from "../../module/atom/interview";
+import { postModalState } from "../../module/atom/map";
+import { ToastSuccess } from "../../lib/hook/toastHook";
 
 const InterviewPage = () => {
   const [questionInput, setQuestionInput] = useState<number>(1);
-  const setModal = useSetRecoilState(modalState);
+  const [modal, setModal] = useRecoilState(modalState);
+  const setPostCodeModal = useSetRecoilState(postModalState);
   const [input, setInput] = useRecoilState(reviewData);
   const [test, setTest] = useRecoilState(reviewListState);
-
-  // const AddInput = () => {
-  //   setQuestionInput(questionInput + 1);
-  // };
-  // const DeleteInput = () => {
-  //   if (questionInput >= 2) {
-  //     setQuestionInput(questionInput - 1);
-  //   }
-  // };
+  const [location, setLocation] = useRecoilState<string>(locationState);
 
   const onChange = (e: any) => {
     const { name, value } = e.target;
-
     setInput({
       ...input,
+      location: location,
       [name]: value,
     });
   };
 
   useEffect(() => {
     console.log(input);
-  }, [input]);
+  }, [input, location]);
+
+  const onsubmit = (e: any) => {
+    e.preventDefault();
+
+    setModal(false);
+    ToastSuccess("면접 후기가 등록되었습니다.");
+  };
 
   return (
-    <S.Container>
+    <S.Container modal={modal}>
       <DaumPost />
       <S.ReviewPostModal>
         <S.ContentSpan>등록할 회사</S.ContentSpan>
@@ -46,12 +48,14 @@ const InterviewPage = () => {
             name="title"
             value={input.title}
             onChange={(e) => onChange(e)}
-            onClick={() => setModal(false)}
+            //onClick={() => setModal(false)}
           ></S.CompanyInput>
           <S.CompanyInput
+            name="location"
             type="text"
+            value={location}
             placeholder="회사 위치는 어디인가요?"
-            onClick={() => setModal(true)}
+            onClick={() => setPostCodeModal(true)}
             readOnly
           ></S.CompanyInput>
         </S.CompanyInfo>
@@ -95,22 +99,15 @@ const InterviewPage = () => {
             value={input.interview3}
             placeholder="어떤 질문이 나왔나요? ( 실제 질문 형식처럼 적어주세요 )"
           ></S.ReviewInputBox>
-
-          {/* <S.ReviewInputAdd
-            type="button"
-            value="+"
-            onClick={(e) => {
-              AddInput();
-            }}
-          ></S.ReviewInputAdd>
-          <S.ReviewInputMinus
-            type="button"
-            value="-"
-            onClick={DeleteInput}
-          ></S.ReviewInputMinus> */}
         </S.ReviewInputContainer>
         <S.BtnWrapper>
-          <S.PostBtn>등록 및 작성</S.PostBtn>
+          <S.PostBtn
+            onClick={(e) => {
+              onsubmit(e);
+            }}
+          >
+            등록 및 작성
+          </S.PostBtn>
         </S.BtnWrapper>
       </S.ReviewPostModal>
     </S.Container>
