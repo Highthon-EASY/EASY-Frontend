@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./style";
 
 interface Props {
@@ -6,6 +6,8 @@ interface Props {
 }
 
 const QuestionItem = ({ item }: Props) => {
+  const [value, setValue] = useState("");
+
   return (
     <div>
       <li>{item.title}</li>
