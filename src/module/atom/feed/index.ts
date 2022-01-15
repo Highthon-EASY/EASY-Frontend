@@ -106,3 +106,109 @@ export const feedData = [
     date: "이틀 전",
   },
 ];
+
+// empData
+export const empData = [
+  {
+    id: 1,
+    title: "1년 2개월차 대덕 졸업생인데",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "연봉 1500 올려준다는데 이직하려고" },
+      { subContent: "워라밸도 훨 좋다.. 단점은 집이랑 좀 머네" },
+      { subContent: "마고인들아 너네도 할 수 있다! 화이팅!!" },
+    ],
+    date: "5시간 전",
+  },
+  {
+    id: 1,
+    title: "회사에서 자꾸 백엔드 시킨다",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "난 분명 퍼블리셔로 입사했는데" },
+      { subContent: "처음엔 리액트 가르치면서 프론트로 일까지 시키다가" },
+      { subContent: "이제는 백엔드까지 가르치면서 일 시키려 함ㅋㅋ" },
+      { subContent: "꼴받아서 그냥 퇴사 박아버릴까보다;" },
+    ],
+    date: "22시간 전",
+  },
+  {
+    id: 1,
+    title: "야근하는 회사",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "나는 개인적으로 좋은 것 가탱" },
+      { subContent: "야근 수당도 받고!" },
+      { subContent: "실력도 늘고! 히히 ^__^!!" },
+      { subContent: "라고 하라고 팀장님이 시켰다.." },
+    ],
+    date: "하루 전",
+  },
+  {
+    id: 1,
+    title: "회사랑 대학이랑 같이 다녀본 후기",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "난 방통대 주말마다 다녔어" },
+      { subContent: "근데 어지간하면 하지마 몸이 안따라줘" },
+      { subContent: "차라리 학은제나 사이버대 하는게 낫다" },
+    ],
+    date: "2일 전",
+  },
+  {
+    id: 1,
+    title: "면접에서 자주 물어보는 질문 리스트 TOP 3",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "1. 1분 자기소개" },
+      { subContent: "2. 회사에 지원한 동기는?" },
+      { subContent: "3. 직무를 위해 어떤 자기계발을 하였는지?" },
+    ],
+    date: "2일 전",
+  },
+  {
+    id: 1,
+    title: "근데 여기 카테고리 개웃긴겤ㅋㅋ",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "코딩의 ㅋ도 안꺼내네ㅋㅋㅋ" },
+      { subContent: "역시 뼛속까지 개발자들 ㅋ;" },
+      { subContent: "집와서까지 코딩얘기하기싫다.." },
+    ],
+    date: "5일 전",
+  },
+  {
+    id: 1,
+    title: "회사랑 2시간 거린데 자취해야겠지?",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "워라밸도 너무 좋고 사람들도 너무 좋고" },
+      { subContent: "무엇보다 연봉이.. 진짜 너무 마음에 들음" },
+      { subContent: "아직 차 뽑기는 이르니까 자취가 맞겠지 흠." },
+    ],
+    date: "일주일 전",
+  },
+  {
+    id: 1,
+    title: "퇴사할건데 스터디 같이 할 사람",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "CS스터디나 FE스터디할 것 같네요" },
+      { subContent: "매주 몇요일마다 공부한 내용 발표하는걸로?" },
+      { subContent: "관심있으면 w2032@e-mirim.hs.kr 연락주세요" },
+    ],
+    date: "일주일 전",
+  },
+  {
+    id: 1,
+    title: "재택근무에 대하여",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "장점: 집이다" },
+      { subContent: "단점: 집이다" },
+      { subContent: "필자는 집에 있으면 늘어지는 편이라" },
+      { subContent: "재택은 완전완전 비추하는편이다..." },
+    ],
+    date: "일주일 전",
+  },
+];
