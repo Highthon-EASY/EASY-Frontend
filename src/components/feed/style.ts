@@ -6,7 +6,7 @@ export const FeedWrapper = styled.div`
 `;
 
 export const FeedItem = styled.div`
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -24,13 +24,17 @@ export const FeedItem = styled.div`
   #title {
     font-size: 18px;
     font-weight: 500;
+    margin-left: 2px;
   }
 
   .content {
-    margin-top: 10px;
+    margin-left: 2px;
+    margin-bottom: 6px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 15px;
+    color: #4f4f4f;
   }
 
   .user-info {
@@ -43,12 +47,21 @@ export const FeedItem = styled.div`
     }
     span:nth-child(1) {
       color: #787878;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     span:nth-child(2) {
       color: #b7b7b7;
-      font-size: 12px;
+      font-size: 10px;
+    }
+  }
+
+  .like_button {
+    & img {
+      width: 40px;
+      height: 40px;
+      float: right;
+      margin-top: 104px;
     }
   }
 
