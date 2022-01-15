@@ -10,18 +10,15 @@ import * as S from "./style";
 
 const FeedPage = () => {
   const [list, setList] = useState([]);
-  
 
-  const onInputHandler = (e: any) => {
-
-  };
+  const onInputHandler = (e: any) => {};
 
   return (
     <S.FeedWrapper>
       {feedData.map((item: any, index: number) => (
         <S.FeedItem key={index}>
-          <span>{item.title}</span>
-          <span>{item.content}</span>
+          <span id="title">{item.title}</span>
+          <span className="content">{item.content}</span>
           <span>{item.date}</span>
         </S.FeedItem>
       ))}
