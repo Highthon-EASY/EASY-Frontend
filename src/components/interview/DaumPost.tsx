@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import DaumPostCode from "react-daum-postcode";
 import * as S from "./style";
-import { useRecoilValue } from "recoil";
-import { modalState } from "../../module/atom/interview";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { locationState, modalState } from "../../module/atom/interview";
 import { postModalState } from "../../module/atom/map";
 
 const DaumPost = () => {
   const postcodeModal = useRecoilValue(modalState);
   const modal = useRecoilValue(postModalState);
+  const [location, setLocation] = useRecoilState<string>(locationState);
+
   const handleComplete = (data: any) => {
     let fullAddress = data.address;
     let extraAddress = "";
