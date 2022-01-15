@@ -7,6 +7,7 @@ interface Props {
 export const ModalWrapper = styled.div<Props>`
   display: ${({ modal }) => (modal ? "flex" : "none")};
   position: absolute;
+  width: 0vh;
 `;
 
 export const Container = styled.div<Props>`
@@ -22,7 +23,7 @@ export const Container = styled.div<Props>`
 
 export const ReviewPostModal = styled.div`
   width: 45%;
-  height: 60%;
+  height: auto;
   background-color: white;
   border-radius: 5px;
   padding: 40px;
