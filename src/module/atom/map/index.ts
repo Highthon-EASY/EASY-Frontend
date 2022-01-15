@@ -28,3 +28,8 @@ export const modalState = atom<boolean>({
   key: "modalState",
   default: false,
 });
+
+export const inputModalState = atom<boolean>({
+  key: "inputModalState",
+  default: false,
+});

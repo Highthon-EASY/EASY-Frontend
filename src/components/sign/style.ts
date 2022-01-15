@@ -19,6 +19,10 @@ export const SignBox = styled.div`
   align-items: center;
   width: 250px;
 
+  img {
+    margin-bottom : 20px;
+  }
+
   .input-box {
     width: 100%;
     display: flex;
