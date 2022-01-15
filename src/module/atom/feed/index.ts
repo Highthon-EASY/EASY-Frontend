@@ -213,3 +213,109 @@ export const empData = [
     date: "일주일 전",
   },
 ];
+
+//interviewData
+export const interviewData = [
+  {
+    id: 1,
+    title: "면접에서 자주 물어보는 질문 리스트 TOP 3",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "1. 1분 자기소개" },
+      { subContent: "2. 회사에 지원한 동기는?" },
+      { subContent: "3. 직무를 위해 어떤 자기계발을 하였는지?" },
+    ],
+    date: "13분 전",
+  },
+  {
+    id: 1,
+    title: "면접 잘 보는 제일 좋은 팁",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "진짜 다 필요없고 스터디하면 됨" },
+      { subContent: "CS도 면접도 그냥 스터디하면 반 이상은 감" },
+    ],
+    date: "하루 전",
+  },
+  {
+    id: 1,
+    title: "면접 보기전에 여러사이트 뒤져보세여",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "취업관련 사이트들 뒤지면 예상질문같은거" },
+      { subContent: "의외로 많이 나와여! 예를 들어서 로켓펀치나," },
+      { subContent: "원티드,잡플래닛.. 이런 사이트들! 잘 찾아보세여" },
+    ],
+    date: "이틀 전",
+  },
+  {
+    id: 1,
+    title: "코딩테스트도 물론 중요하지만",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "무엇보다 중요한건 인성면접 같네요." },
+      { subContent: "물론 실력을 더 중요시 하는 회사도 있겠지만," },
+      { subContent: "여태껏 제가 쌓은 경험으로는 " },
+      {
+        subContent: "인성을 더 중요시 보네요.",
+      },
+    ],
+    date: "4일 전",
+  },
+  {
+    id: 1,
+    title: "면접 볼 때 주의사항!!",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "마고인들! 면접볼 때 꼭 주의할게 있어요" },
+      { subContent: "면접관이 본인의 자존감을 까내리거나," },
+      { subContent: "하등한 취급을 한다면 무조건 도망치세요!" },
+      { subContent: "그런 쓰레기 기업엔 남아서 좋을게 없어요ㅎㅎ" },
+    ],
+    date: "일주일 전",
+  },
+  {
+    id: 1,
+    title: "자기소개 준비 TIP 📢",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "첫번째로 거울을 준비한다" },
+      { subContent: "두번째로 또박또박 발음하는 것을 연습한다" },
+      { subContent: "세번째로 어떤 미소가 제일 이쁜지 연구한다" },
+    ],
+    date: "일주일 전",
+  },
+  {
+    id: 1,
+    title: "면접날에 가장 중요한 것",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "시간 약속 지키기!!" },
+      { subContent: "너무나도 당연한거지만 ㅋㅋㅋㅋㅋㅋ" },
+      { subContent: "이 당연한걸 안지키는 사람들이 너무 많아" },
+    ],
+    date: "이주일 전",
+  },
+  {
+    id: 1,
+    title: "면접볼 때 제발 구부정하게 앉지마",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "진짜진짲진짜ㅉ진짜제ㅔ발" },
+      { subContent: "제에에에ㅔ발부탁이야ㅠㅠㅠ " },
+      { subContent: "격식있는 자리인데 예의있게 앉아있자.." },
+    ],
+    date: "이주일 전",
+  },
+  {
+    id: 1,
+    title: "면접관분들의 질문에 쫄면 지는거다",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "쪼는 순간 바로 탈락이라고 할 수 있어" },
+      { subContent: "무조건 자신감이 힘이다!!!" },
+      { subContent: "자신감 가지고 하면 절반은 무조건 간다!!" },
+    ],
+    date: "이주일 전",
+  },
+];
