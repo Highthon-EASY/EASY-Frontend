@@ -1,5 +1,7 @@
 import React from "react";
+import { useRecoilState } from "recoil";
 import { CompanyType } from "../../../../lib/interface/CompanyType";
+import { modalState } from "../../../../module/atom/map";
 import * as S from "./style";
 
 interface Props {
@@ -7,13 +9,19 @@ interface Props {
 }
 
 const ListItem = ({ item }: Props) => {
+  const [modal, setModal] = useRecoilState(modalState);
+
   return (
     <S.ListItemBox>
       <div className="item-info">
         <span>{item.title}</span>
         <span>{item.location}</span>
       </div>
-      <img src="" alt="화살표" />
+      <img
+        src="/assets/arrow.svg"
+        alt="화살표"
+        onClick={() => setModal(!modal)}
+      />
     </S.ListItemBox>
   );
 };
