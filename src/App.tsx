@@ -1,7 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { FeedPage, MapPage, SignPage, SignUpPage } from "./components";
+import {
+  FeedPage,
+  MapPage,
+  SignPage,
+  SignUpPage,
+  FeedPost,
+} from "./components";
 
 function App() {
   return (
@@ -11,6 +17,7 @@ function App() {
         <Route path="/signin" element={<SignPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/feed" element={<FeedPage />} />
+        <Route path="/feedPost" element={<FeedPost />} />
       </Routes>
     </BrowserRouter>
   );
