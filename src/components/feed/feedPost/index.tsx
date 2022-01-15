@@ -29,7 +29,12 @@ const FeedPost = () => {
       <S.PostBox>
         <div className="select-box">
           <h4>카테고리 선택</h4>
-          <S.CategorySelect />
+          <select>
+            <option value="">학교생활</option>
+            <option value="">회사생활</option>
+            <option value="">면접꿀팁</option>
+            <option value="">기타</option>
+          </select>
         </div>
         <div className="input-box">
           <h4>피드</h4>
