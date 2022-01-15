@@ -29,7 +29,7 @@ const SignUpPage = () => {
   return (
     <S.SignWrapper>
       <S.SignBox>
-        <img src="" alt="logo" />
+        <img src="/assets/Logo.svg" alt="logo" />
         <div className="input-box">
           <S.NameInput
             border={name}

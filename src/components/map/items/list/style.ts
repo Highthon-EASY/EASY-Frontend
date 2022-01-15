@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 
 interface Props {
-  modal: boolean;
+  modal?: boolean;
+  inputOpen?: boolean;
 }
 
 export const ListWrapper = styled.div`
@@ -81,10 +82,32 @@ export const ModalWrapper = styled.div<Props>`
     }
 
     .interview-list {
+      height: 500px;
+      overflow: auto;
+
       li {
         margin-left: 7%;
         margin-top: 10px;
       }
     }
   }
+`;
+
+export const QuestionWrapper = styled.div`
+  & li {
+    cursor: pointer;
+  }
+  & textarea {
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 0.5px solid #aeaeae;
+    resize: none;
+  }
+`;
+
+export const InputBox = styled.div<Props>`
+  display: ${(props) => (props.inputOpen ? "flex" : "none")};
 `;
