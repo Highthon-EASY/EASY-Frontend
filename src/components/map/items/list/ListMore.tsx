@@ -1,11 +1,11 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { modalState } from "../../../../module/atom/map";
+import { questionModalState } from "../../../../module/atom/map";
 import QuestionItem from "./QuestionItem";
 import * as S from "./style";
 
 const ListMore = () => {
-  const [modal, setModal] = useRecoilState(modalState);
+  const [modal, setModal] = useRecoilState(questionModalState);
 
   const list = [
     {

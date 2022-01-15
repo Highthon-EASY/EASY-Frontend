@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "..";
+import { Header, InterviewPage } from "..";
 import List from "./items/list/List";
 import ListMore from "./items/list/ListMore";
 import Map from "./items/map";
@@ -9,6 +9,7 @@ const MapPage = () => {
   return (
     <S.MapWrapper>
       <Header />
+      <InterviewPage />
       <S.MapContainer>
         <S.ListWrapper>
           <List />
