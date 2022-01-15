@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+export const ModalWrapper = styled.div`
+  display: flex;
+  position: absolute;
+`;
+
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -9,16 +14,16 @@ export const Wrapper = styled.div`
   position: fixed;
   z-index: 1;
   background: rgba(107, 107, 107, 0.58);
-  overflow-y: scroll;
 `;
 
 export const ReviewPostModal = styled.div`
   width: 796px;
-  height: auto;
+  height: 584px;
   background-color: white;
   border-radius: 10px;
   padding: 50px;
   margin: 50px 0;
+  overflow-y: scroll;
 `;
 
 export const ContentSpan = styled.span`
@@ -46,7 +51,7 @@ export const CompanyInput = styled.input`
   }
 `;
 
-export const ReviewInputContainer = styled.span`
+export const ReviewInputContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -69,13 +74,30 @@ export const ReviewInput = styled.input`
   margin: 0 10px 20px 10px;
   padding: 10px;
   border-radius: 5px;
+  background-color: white;
   border: 1px solid #bdbdbd;
+  text-align: center;
+`;
+
+export const ReviewInputBox = styled(ReviewInput)`
   :focus {
     border: 1px solid #5391fc;
   }
-  .AddBtn {
-    color: white;
-    background-color: white;
+`;
+
+export const ReviewInputAdd = styled(ReviewInput)`
+  :hover {
+    color: #63ba6c;
+    border: 1px solid #63ba6c;
+    font-weight: bold;
+  }
+`;
+
+export const ReviewInputMinus = styled(ReviewInput)`
+  :hover {
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
   }
 `;
 
