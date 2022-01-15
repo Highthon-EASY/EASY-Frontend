@@ -213,3 +213,212 @@ export const empData = [
     date: "일주일 전",
   },
 ];
+
+//interviewData
+export const interviewData = [
+  {
+    id: 1,
+    title: "면접에서 자주 물어보는 질문 리스트 TOP 3",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "1. 1분 자기소개" },
+      { subContent: "2. 회사에 지원한 동기는?" },
+      { subContent: "3. 직무를 위해 어떤 자기계발을 하였는지?" },
+    ],
+    date: "13분 전",
+  },
+  {
+    id: 1,
+    title: "면접 잘 보는 제일 좋은 팁",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "진짜 다 필요없고 스터디하면 됨" },
+      { subContent: "CS도 면접도 그냥 스터디하면 반 이상은 감" },
+    ],
+    date: "하루 전",
+  },
+  {
+    id: 1,
+    title: "면접 보기전에 여러사이트 뒤져보세여",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "취업관련 사이트들 뒤지면 예상질문같은거" },
+      { subContent: "의외로 많이 나와여! 예를 들어서 로켓펀치나," },
+      { subContent: "원티드,잡플래닛.. 이런 사이트들! 잘 찾아보세여" },
+    ],
+    date: "이틀 전",
+  },
+  {
+    id: 1,
+    title: "코딩테스트도 물론 중요하지만",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "무엇보다 중요한건 인성면접 같네요." },
+      { subContent: "물론 실력을 더 중요시 하는 회사도 있겠지만," },
+      { subContent: "여태껏 제가 쌓은 경험으로는 " },
+      {
+        subContent: "인성을 더 중요시 보네요.",
+      },
+    ],
+    date: "4일 전",
+  },
+  {
+    id: 1,
+    title: "면접 볼 때 주의사항!!",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "마고인들! 면접볼 때 꼭 주의할게 있어요" },
+      { subContent: "면접관이 본인의 자존감을 까내리거나," },
+      { subContent: "하등한 취급을 한다면 무조건 도망치세요!" },
+      { subContent: "그런 쓰레기 기업엔 남아서 좋을게 없어요ㅎㅎ" },
+    ],
+    date: "일주일 전",
+  },
+  {
+    id: 1,
+    title: "자기소개 준비 TIP 📢",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "첫번째로 거울을 준비한다" },
+      { subContent: "두번째로 또박또박 발음하는 것을 연습한다" },
+      { subContent: "세번째로 어떤 미소가 제일 이쁜지 연구한다" },
+    ],
+    date: "일주일 전",
+  },
+  {
+    id: 1,
+    title: "면접날에 가장 중요한 것",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "시간 약속 지키기!!" },
+      { subContent: "너무나도 당연한거지만 ㅋㅋㅋㅋㅋㅋ" },
+      { subContent: "이 당연한걸 안지키는 사람들이 너무 많아" },
+    ],
+    date: "이주일 전",
+  },
+  {
+    id: 1,
+    title: "면접볼 때 제발 구부정하게 앉지마",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "진짜진짲진짜ㅉ진짜제ㅔ발" },
+      { subContent: "제에에에ㅔ발부탁이야ㅠㅠㅠ " },
+      { subContent: "격식있는 자리인데 예의있게 앉아있자.." },
+    ],
+    date: "이주일 전",
+  },
+  {
+    id: 1,
+    title: "면접관분들의 질문에 쫄면 지는거다",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "쪼는 순간 바로 탈락이라고 할 수 있어" },
+      { subContent: "무조건 자신감이 힘이다!!!" },
+      { subContent: "자신감 가지고 하면 절반은 무조건 간다!!" },
+    ],
+    date: "이주일 전",
+  },
+];
+
+//etcData
+export const etcData = [
+  {
+    id: 1,
+    title: "방탈출 같이 갈 사람?",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "나 방탈경력 +50방인데" },
+      { subContent: "혹시 마고인중에서 나랑 같이 방탈할사람?" },
+      { subContent: "@s_y__04_로 DM줘!! 기다릴게 ㅠㅠ" },
+    ],
+    date: "방금 전",
+  },
+  {
+    id: 1,
+    title: "민트초코 왜 먹냐니 선넘네",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "민초의 시원한 그 느낌을 알아?" },
+      { subContent: "그리고 치약맛 아님 ㅡㅡ;" },
+      { subContent: "초코보다 민초가 훨 맛있다" },
+    ],
+    date: "2시간 전",
+  },
+  {
+    id: 1,
+    title: "민트초코 왜 먹어?",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "그 치약맛 나는거.." },
+      { subContent: "베라에서 그거 먹는게 제일 이해 안돼" },
+      { subContent: "물론 베라 다 맛없음" },
+    ],
+    date: "2시간 전",
+  },
+  {
+    id: 1,
+    title: "이번 하이톤 참가한 후기!!!!!",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "코로나라서 오프인게 좀 아쉽긴한데 ㅠㅠ" },
+      { subContent: "대신 요즘 유행 게더타운으로 진행했었다!" },
+      { subContent: "물론 난 참가함! 너무 재밌었다" },
+      { subContent: "새벽에 잠을 못 잤더니 피곤했던거빼고 ㅎㅎㅎ" },
+    ],
+    date: "7시간 전",
+  },
+  {
+    id: 1,
+    title: "롤 내전마렵네",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "담에 마고vs마고로 학교대항전 했으면 좋겠다 ㅋㅋ" },
+      { subContent: '버스태워줄테니까 "hide on bush" 친추 ㄱ' },
+    ],
+    date: "하루 전",
+  },
+  {
+    id: 1,
+    title: "짜파게티 vs 짜짜로니",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "이런건 질문이라고 하기도 뭐함" },
+      { subContent: "누가 뭐라해도 답정너 불닭볶음면이니깐ㅋ" },
+    ],
+    date: "하루 전",
+  },
+  {
+    id: 1,
+    title: "요즘 내 PLAY LIST 🎧 ",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "never be the same - camila cabello" },
+      { subContent: "낮 밤 - 이영지" },
+      { subContent: "문득 - BEO" },
+    ],
+    date: "하루 전",
+  },
+  {
+    id: 1,
+    title: "고삼이라니고삼이라니고라니",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "엊그저께 입학했는데" },
+      { subContent: "코로나 때문에 배운 것도 없는데" },
+      { subContent: "왜!!?! 벌써 고삼인건데!!!!" },
+    ],
+    date: "이틀 전",
+  },
+  {
+    id: 1,
+    title: "요즘 너무 힘들어",
+    name: "익명의 사용자",
+    content: [
+      { subContent: "마고 입학하고 친구 관계때문에" },
+      { subContent: "자꾸 중학교 시절이 그리워진다" },
+      { subContent: "며칠째 꿈에 시달리고 있어." },
+      { subContent: "너무너무 돌아가고 싶다.." },
+    ],
+    date: "3일 전",
+  },
+];
