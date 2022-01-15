@@ -1,5 +1,7 @@
 import React from "react";
 import Title from "./item/Title";
+import Content from "./item/Content";
+import Comment from "./item/Comment";
 
 
 //게시글 보여줌
@@ -12,6 +14,8 @@ const FeedPage = () => {
   return (
     <div>
       <Title />
+      <Content />
+      <Comment />
     </div>
   );
 };
