@@ -7,6 +7,7 @@ interface Props {
 export const ModalWrapper = styled.div<Props>`
   display: ${({ modal }) => (modal ? "flex" : "none")};
   position: absolute;
+  width: 0vh;
 `;
 
 export const Container = styled.div<Props>`
