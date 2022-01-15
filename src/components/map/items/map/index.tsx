@@ -58,6 +58,25 @@ const Map = () => {
           });
         });
       });
+
+      var infoWindowElement = [`<span>맹그로브 신설</span>`].join("");
+
+      var infowindow = new naver.maps.InfoWindow({
+        content: infoWindowElement[0],
+
+        borderWidth: 0,
+        disableAnchor: true,
+        backgroundColor: "transparent",
+
+        pixelOffset: new naver.maps.Point(0, -28),
+      });
+
+      naver.maps.Event.addListener(map, "click", function (e) {
+        var latlng = e.latlng;
+
+        //infoWindowElement.find("em").text(latlng.toString());
+        infowindow.open(map, latlng);
+      });
     }
   }, [myLocation]);
 
