@@ -21,11 +21,29 @@ export const listdata = [
     x: "",
     y: "",
   },
+  {
+    title: "맹그로브 신설",
+    location: "서울특별시 동대문구 왕산로 22 맹그로브 신설점",
+    x: "",
+    y: "",
+  },
+  {
+    title: "맹그로브",
+    location: "서울특별시 서초구 나루터로 76",
+    x: "",
+    y: "",
+  },
+  {
+    title: "맹그로브 숭인",
+    location: "서울특별시 종로구 지봉로12길 17",
+    x: "",
+    y: "",
+  },
 ];
 
 const List = () => {
   return (
-    <S.ListWrapper className="list-container">
+    <S.ListWrapper>
       <div className="info-text">32개의 회사정보</div>
       {listdata.map((item, index) => (
         <ListItem key={index} item={item} />
