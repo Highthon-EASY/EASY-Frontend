@@ -1,4 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { SearchMapApi } from "../../../../lib/api/searchMapApi";
+import { CompanyType } from "../../../../lib/interface/CompanyType";
+import { MapListState, MapMarkerState } from "../../../../module/atom/map";
+import { listdata } from "../list/List";
+
+interface resType {
+  x: string;
+  y: string;
+  location: string;
+}
 
 const Map = () => {
   const [myLocation, setMyLocation] = useState<
@@ -37,6 +48,17 @@ const Map = () => {
           origin: new naver.maps.Point(0, 0),
           anchor: new naver.maps.Point(11, 35),
         },
+      });
+
+      listdata.map((item: CompanyType, idx: number) => {
+        SearchMapApi(item.location).then((res: any) => {
+          console.log(res);
+
+          new naver.maps.Marker({
+            position: new naver.maps.LatLng(res.y, res.x),
+            map: map,
+          });
+        });
       });
     }
   }, [myLocation]);

@@ -22,19 +22,24 @@ export const ListItemBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  transition: all 0.5s;
 
   .item-info {
     display: flex;
     flex-direction: column;
 
-    span:nth-child(1) {
+    span:nth-of-type(1) {
       font-weight: 500;
       font-size: 18px;
     }
 
-    span:nth-child(2) {
+    span:nth-of-type(2) {
       color: #7a7a7a;
       font-size: 14px;
     }
+  }
+
+  :hover {
+    background: #fafaff;
   }
 `;
