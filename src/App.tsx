@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-<<<<<<< HEAD
-import { FeedPage, SignPage, SignUpPage, InterviewPage } from "./components";
-=======
-import { FeedPage, MapPage, SignPage, SignUpPage } from "./components";
->>>>>>> main
-
+import {
+  FeedPage,
+  MapPage,
+  SignPage,
+  SignUpPage,
+  InterviewPage,
+} from "./components";
 function App() {
   return (
     <BrowserRouter>
