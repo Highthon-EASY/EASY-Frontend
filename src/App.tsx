@@ -7,7 +7,9 @@ import {
   SignPage,
   SignUpPage,
   InterviewPage,
+  FeedPost,
 } from "./components";
+        
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +19,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/feed" element={<FeedPage />} />
         <Route path="/interview" element={<InterviewPage />} />
+        <Route path="/feedPost" element={<FeedPost />} />
       </Routes>
     </BrowserRouter>
   );
