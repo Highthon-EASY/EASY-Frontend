@@ -17,11 +17,7 @@ const ListItem = ({ item }: Props) => {
         <span>{item.title}</span>
         <span>{item.location}</span>
       </div>
-      <img
-        src="/assets/arrow.svg"
-        alt="화살표"
-        onClick={() => setModal(!modal)}
-      />
+      <S.arrow onClick={() => setModal(!modal)}>{"➡️"}</S.arrow>
     </S.ListItemBox>
   );
 };
