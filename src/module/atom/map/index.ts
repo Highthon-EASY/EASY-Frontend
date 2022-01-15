@@ -24,6 +24,11 @@ export const MapMarkerState = atom<any>({
   default: [],
 });
 
+export const questionModalState = atom<boolean>({
+  key: "questionModalState",
+  default: false,
+});
+
 export const modalState = atom<boolean>({
   key: "modalState",
   default: false,
@@ -31,5 +36,10 @@ export const modalState = atom<boolean>({
 
 export const inputModalState = atom<boolean>({
   key: "inputModalState",
+  default: false,
+});
+
+export const postModalState = atom<boolean>({
+  key: "postModalState",
   default: false,
 });

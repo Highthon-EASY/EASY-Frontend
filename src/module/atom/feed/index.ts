@@ -16,6 +16,7 @@ export const feedData = [
       { title: "sdfsfsfsf" },
     ],
     date: "3시간 전",
+    heart: false,
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ export const feedData = [
       { title: "sdfsfsfsf" },
     ],
     date: "6시간 전",
+    heart: true,
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ export const feedData = [
       { title: "sdfsfsfsf" },
     ],
     date: "23시간 전",
+    heart: true,
   },
   {
     id: 4,
@@ -49,5 +52,6 @@ export const feedData = [
       { title: "sdfsfsfsf" },
     ],
     date: "하루 전",
+    heart: false,
   },
 ];

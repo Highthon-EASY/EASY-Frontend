@@ -1,7 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { CompanyType } from "../../../../lib/interface/CompanyType";
-import { modalState } from "../../../../module/atom/map";
+import { questionModalState } from "../../../../module/atom/map";
 import * as S from "./style";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ListItem = ({ item }: Props) => {
-  const [modal, setModal] = useRecoilState(modalState);
+  const [modal, setModal] = useRecoilState(questionModalState);
 
   return (
     <S.ListItemBox>

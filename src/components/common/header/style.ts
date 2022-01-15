@@ -30,7 +30,9 @@ export const HeaderWrapper = styled.div`
         font-weight: 500;
       }
 
-      & div {
+      & a {
+        text-decoration: none;
+        color: black;
         margin: 0 30px;
         width: fit-content;
         text-align: center;
