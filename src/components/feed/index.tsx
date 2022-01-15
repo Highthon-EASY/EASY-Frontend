@@ -23,6 +23,9 @@ const FeedPage = () => {
             <span>by 익명 사용자</span>
             <span>{item.date}</span>
           </div>
+          <div className="like_button">
+            <img src="/assets/heart.svg" onClick={(e) => )}/>
+          </div>
         </S.FeedItem>
       ))}
     </S.FeedWrapper>
