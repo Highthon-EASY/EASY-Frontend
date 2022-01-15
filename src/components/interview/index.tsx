@@ -1,38 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { CategorySelector } from "../constant/interview";
 import DaumPost from "./DaumPost";
-import { useSetRecoilState } from "recoil";
+import { useSetRecoilState, useRecoilState } from "recoil";
 import { modalState } from "../../module/atom/interview";
+import { reviewData, reviewListState } from "../../module/atom/interview";
 
 const InterviewPage = () => {
   const [questionInput, setQuestionInput] = useState<number>(1);
   const setModal = useSetRecoilState(modalState);
+  const [input, setInput] = useRecoilState(reviewData);
+  const [test, setTest] = useRecoilState(reviewListState);
 
-  const AddInput = () => {
-    setQuestionInput(questionInput + 1);
+  // const AddInput = () => {
+  //   setQuestionInput(questionInput + 1);
+  // };
+  // const DeleteInput = () => {
+  //   if (questionInput >= 2) {
+  //     setQuestionInput(questionInput - 1);
+  //   }
+  // };
+
+  const onChange = (e: any) => {
+    const { name, value } = e.target;
+
+    setInput({
+      ...input,
+      [name]: value,
+    });
   };
-  const DeleteInput = () => {
-    if (questionInput >= 2) {
-      setQuestionInput(questionInput - 1);
-    }
-  };
+
+  useEffect(() => {
+    console.log(input);
+  }, [input]);
 
   return (
-    <S.Wrapper>
+    <S.Container>
       <DaumPost />
       <S.ReviewPostModal>
         <S.ContentSpan>등록할 회사</S.ContentSpan>
         <S.CompanyInfo>
-          <S.CompanyInput placeholder="회사 이름은 무엇인가요?"></S.CompanyInput>
           <S.CompanyInput
+            type="text"
+            placeholder="회사 이름은 무엇인가요?"
+            name="title"
+            value={input.title}
+            onChange={(e) => onChange(e)}
+            onClick={() => setModal(false)}
+          ></S.CompanyInput>
+          <S.CompanyInput
+            type="text"
             placeholder="회사 위치는 어디인가요?"
             onClick={() => setModal(true)}
+            readOnly
           ></S.CompanyInput>
         </S.CompanyInfo>
         <S.ContentSpan>면접 후기</S.ContentSpan>
         <S.ReviewInputContainer>
-          <S.ModalSelector>
+          <S.ModalSelector
+            onChange={(e) => onChange(e)}
+            name="field"
+            value={input.field}
+          >
             {CategorySelector &&
               CategorySelector.map((item: string, i: number) => {
                 return (
@@ -42,30 +71,49 @@ const InterviewPage = () => {
                 );
               })}
           </S.ModalSelector>
-          <S.ReviewInputBox placeholder="면접 난이도는 어땠나요?"></S.ReviewInputBox>
-          {Array(questionInput)
-            .fill(0)
-            .map((v, i) => {
-              return (
-                <S.ReviewInputBox placeholder="어떤 질문이 나왔나요? ( 실제 질문 형식처럼 적어주세요 )"></S.ReviewInputBox>
-              );
-            })}
-          <S.ReviewInputAdd
+          <S.ReviewInputBox
+            onChange={(e) => onChange(e)}
+            name="level"
+            value={input.level}
+            placeholder="면접 난이도는 어땠나요?"
+          ></S.ReviewInputBox>
+          <S.ReviewInputBox
+            onChange={(e) => onChange(e)}
+            name="interview1"
+            value={input.interview1}
+            placeholder="어떤 질문이 나왔나요? ( 실제 질문 형식처럼 적어주세요 )"
+          ></S.ReviewInputBox>
+          <S.ReviewInputBox
+            onChange={(e) => onChange(e)}
+            name="interview2"
+            value={input.interview2}
+            placeholder="어떤 질문이 나왔나요? ( 실제 질문 형식처럼 적어주세요 )"
+          ></S.ReviewInputBox>
+          <S.ReviewInputBox
+            onChange={(e) => onChange(e)}
+            name="interview3"
+            value={input.interview3}
+            placeholder="어떤 질문이 나왔나요? ( 실제 질문 형식처럼 적어주세요 )"
+          ></S.ReviewInputBox>
+
+          {/* <S.ReviewInputAdd
             type="button"
             value="+"
-            onClick={AddInput}
+            onClick={(e) => {
+              AddInput();
+            }}
           ></S.ReviewInputAdd>
           <S.ReviewInputMinus
             type="button"
             value="-"
             onClick={DeleteInput}
-          ></S.ReviewInputMinus>
+          ></S.ReviewInputMinus> */}
         </S.ReviewInputContainer>
         <S.BtnWrapper>
           <S.PostBtn>등록 및 작성</S.PostBtn>
         </S.BtnWrapper>
       </S.ReviewPostModal>
-    </S.Wrapper>
+    </S.Container>
   );
 };
 

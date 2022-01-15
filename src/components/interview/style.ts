@@ -5,7 +5,7 @@ export const ModalWrapper = styled.div`
   position: absolute;
 `;
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -18,12 +18,11 @@ export const Wrapper = styled.div`
 
 export const ReviewPostModal = styled.div`
   width: 796px;
-  height: 584px;
+  height: 610px;
   background-color: white;
   border-radius: 10px;
-  padding: 50px;
+  padding: 40px;
   margin: 50px 0;
-  overflow-y: scroll;
 `;
 
 export const ContentSpan = styled.span`

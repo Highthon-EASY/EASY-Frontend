@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DaumPostCode from "react-daum-postcode";
 import * as S from "./style";
 import { useRecoilState } from "recoil";
