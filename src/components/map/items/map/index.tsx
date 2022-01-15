@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
 import { SearchMapApi } from "../../../../lib/api/searchMapApi";
 import { CompanyType } from "../../../../lib/interface/CompanyType";
-import { MapListState, MapMarkerState } from "../../../../module/atom/map";
 import { listdata } from "../list/List";
 
 interface resType {
