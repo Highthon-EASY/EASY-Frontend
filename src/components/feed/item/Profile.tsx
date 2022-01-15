@@ -1,9 +1,7 @@
 import React from "react";
 
-const Title = () => {
+const Profile = () => {
   return <div>제목</div>;
 };
 
-export default Title;
-
-
+export default Profile;
