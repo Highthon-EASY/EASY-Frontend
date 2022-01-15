@@ -11,11 +11,11 @@ const FeedPost = () => {
   const [content, setContent] = useState<boolean>(false);
 
   const onChangeHandler = (e: any) => {
-    const { title, value } = e.target;
+    const { name, value } = e.target;
 
     setInpust({
       ...inputs,
-      [title]: value,
+      [name]: value,
     });
   };
 
@@ -37,7 +37,7 @@ const FeedPost = () => {
             border={title}
             type="text"
             placeholder="제목"
-            name="name"
+            name="title"
             value={inputs.title}
             onChange={(e) => onChangeHandler(e)}
           />
@@ -45,7 +45,7 @@ const FeedPost = () => {
             border={content}
             type="text"
             placeholder="내용"
-            name="email"
+            name="content"
             value={inputs.content}
             onChange={(e) => onChangeHandler(e)}
           />
