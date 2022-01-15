@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { CategorySelector } from "../constant/interview";
 import DaumPost from "./DaumPost";
-import { useSetRecoilState, useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { modalState } from "../../module/atom/interview";
-import {
-  reviewData,
-  reviewListState,
-  locationState,
-} from "../../module/atom/interview";
+import { reviewData, reviewListState } from "../../module/atom/interview";
+import { postModalState } from "../../module/atom/map";
+import { ToastSuccess } from "../../lib/hook/toastHook";
 
 const InterviewPage = () => {
   const [questionInput, setQuestionInput] = useState<number>(1);
-  const setModal = useSetRecoilState(modalState);
+  const [modal, setModal] = useRecoilState(modalState);
+  const setPostCodeModal = useSetRecoilState(postModalState);
   const [input, setInput] = useRecoilState(reviewData);
   const [test, setTest] = useRecoilState(reviewListState);
   const [location, setLocation] = useRecoilState<string>(locationState);
@@ -31,7 +30,7 @@ const InterviewPage = () => {
   }, [input, location]);
 
   return (
-    <S.Container>
+    <S.Container modal={modal}>
       <DaumPost />
       <S.ReviewPostModal>
         <S.ContentSpan>등록할 회사</S.ContentSpan>
@@ -42,17 +41,14 @@ const InterviewPage = () => {
             name="title"
             value={input.title}
             onChange={(e) => onChange(e)}
-            onClick={() => setModal(false)}
+            //onClick={() => setModal(false)}
           ></S.CompanyInput>
           <S.CompanyInput
             name="location"
             type="text"
             value={location}
             placeholder="회사 위치는 어디인가요?"
-            onClick={(e) => {
-              setModal(true);
-              onChange(e);
-            }}
+            onClick={() => setPostCodeModal(true)}
             readOnly
           ></S.CompanyInput>
         </S.CompanyInfo>
@@ -98,7 +94,14 @@ const InterviewPage = () => {
           ></S.ReviewInputBox>
         </S.ReviewInputContainer>
         <S.BtnWrapper>
-          <S.PostBtn>등록 및 작성</S.PostBtn>
+          <S.PostBtn
+            onClick={() => {
+              setModal(false);
+              ToastSuccess("면접 후기가 등록되었습니다.");
+            }}
+          >
+            등록 및 작성
+          </S.PostBtn>
         </S.BtnWrapper>
       </S.ReviewPostModal>
     </S.Container>

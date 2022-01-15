@@ -28,7 +28,7 @@ const FeedPost = () => {
     <S.PostWrapper>
       <S.PostBox>
         <div className="select-box">
-          <h4>카테고리 선택</h4>
+          <h4 id="title_category">카테고리 선택</h4>
           <select>
             <option value="">학교생활</option>
             <option value="">회사생활</option>
@@ -37,7 +37,7 @@ const FeedPost = () => {
           </select>
         </div>
         <div className="input-box">
-          <h4>피드</h4>
+          <h4 className="title_feed">피드</h4>
           <S.TitleInput
             border={title}
             type="text"
@@ -48,7 +48,6 @@ const FeedPost = () => {
           />
           <S.ContentInput
             border={content}
-            type="text"
             placeholder="내용"
             name="content"
             value={inputs.content}
