@@ -1,3 +1,4 @@
+import { title } from "process";
 import React, { useState } from "react";
 import * as S from "./style";
 
@@ -13,7 +14,7 @@ const FeedItem = ({ item }: Props) => {
       <span id="title">{item.title}</span>
       <div className="content">
         {item.content.map((item: any) => (
-          <span>{item.title}</span>
+          <span>{item.subContent}</span>
         ))}
       </div>
       <div className="user-info">
