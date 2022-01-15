@@ -23,3 +23,8 @@ export const MapMarkerState = atom<any>({
   key: "MapMarkerState",
   default: [],
 });
+
+export const modalState = atom<boolean>({
+  key: "modalState",
+  default: false,
+});

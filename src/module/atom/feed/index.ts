@@ -10,8 +10,7 @@ export const feedData = [
     id: 1,
     title: "면접에서 자주 물어보는 질문 리스트 TOP 3",
     name: "익명의 사용자",
-    content:
-      "1. 1분 자기소개 2. 회사에 지원한 동기는? 3. 직무를 위해 어떤 자기계발을 하였는지?",
+    content: ["sfsdfsd"],
     date: "3시간 전",
   },
   {
