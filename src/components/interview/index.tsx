@@ -14,28 +14,20 @@ const InterviewPage = () => {
   const setPostCodeModal = useSetRecoilState(postModalState);
   const [input, setInput] = useRecoilState(reviewData);
   const [test, setTest] = useRecoilState(reviewListState);
-
-  // const AddInput = () => {
-  //   setQuestionInput(questionInput + 1);
-  // };
-  // const DeleteInput = () => {
-  //   if (questionInput >= 2) {
-  //     setQuestionInput(questionInput - 1);
-  //   }
-  // };
+  const [location, setLocation] = useRecoilState<string>(locationState);
 
   const onChange = (e: any) => {
     const { name, value } = e.target;
-
     setInput({
       ...input,
+      location: location,
       [name]: value,
     });
   };
 
   useEffect(() => {
     console.log(input);
-  }, [input]);
+  }, [input, location]);
 
   return (
     <S.Container modal={modal}>
@@ -52,7 +44,9 @@ const InterviewPage = () => {
             //onClick={() => setModal(false)}
           ></S.CompanyInput>
           <S.CompanyInput
+            name="location"
             type="text"
+            value={location}
             placeholder="회사 위치는 어디인가요?"
             onClick={() => setPostCodeModal(true)}
             readOnly
@@ -98,19 +92,6 @@ const InterviewPage = () => {
             value={input.interview3}
             placeholder="어떤 질문이 나왔나요? ( 실제 질문 형식처럼 적어주세요 )"
           ></S.ReviewInputBox>
-
-          {/* <S.ReviewInputAdd
-            type="button"
-            value="+"
-            onClick={(e) => {
-              AddInput();
-            }}
-          ></S.ReviewInputAdd>
-          <S.ReviewInputMinus
-            type="button"
-            value="-"
-            onClick={DeleteInput}
-          ></S.ReviewInputMinus> */}
         </S.ReviewInputContainer>
         <S.BtnWrapper>
           <S.PostBtn

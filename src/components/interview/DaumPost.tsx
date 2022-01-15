@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DaumPostCode from "react-daum-postcode";
 import * as S from "./style";
 import { useRecoilValue } from "recoil";
@@ -11,6 +11,15 @@ const DaumPost = () => {
   const handleComplete = (data: any) => {
     let fullAddress = data.address;
     let extraAddress = "";
+    let addr = "";
+    if (data.userSelectedType === "R") {
+      addr = data.roadAddress;
+      setLocation(addr);
+    } else {
+      addr = data.roadAddress;
+      setLocation(addr);
+    }
+
     if (data.addressType === "R") {
       if (data.bname !== "") {
         extraAddress += data.bname;
