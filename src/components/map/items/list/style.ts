@@ -119,5 +119,5 @@ export const QuestionWrapper = styled.div`
 `;
 
 export const InputBox = styled.div<Props>`
-  display: ${(props) => (props.inputOpen ? "flex" : "none")};
+  display: "flex";
 `;

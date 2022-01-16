@@ -1,11 +1,11 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { CompanyType } from "../../../../lib/interface/CompanyType";
+import { MapListType } from "../../../../lib/interface/CompanyType";
 import { questionModalState } from "../../../../module/atom/map";
 import * as S from "./style";
 
 interface Props {
-  item: CompanyType;
+  item: MapListType;
 }
 
 const ListItem = ({ item }: Props) => {
@@ -17,7 +17,6 @@ const ListItem = ({ item }: Props) => {
         <span>{item.title}</span>
         <span>{item.location}</span>
       </div>
-
       <img src="/assets/arrow.svg" alt="" />
     </S.ListItemBox>
   );

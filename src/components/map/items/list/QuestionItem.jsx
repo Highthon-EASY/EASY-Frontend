@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./style";
-
-import QuestionModal from "./QuestionModal";
+import { useSpeechRecognition } from "react-speech-kit";
 import { useRecoilState } from "recoil";
 import { inputModalState } from "../../../../module/atom/map";
 
 const QuestionItem = ({ item }) => {
   const [inputOpen, setInputOpen] = useRecoilState(inputModalState);
+  const [value, setValue] = useState("");
 
   function speak(text, opt_prop) {
     if (
@@ -35,7 +35,11 @@ const QuestionItem = ({ item }) => {
     });
   };
 
-  console.log(inputOpen);
+  const { listen, stop } = useSpeechRecognition({
+    onResult: (result) => {
+      setValue(result);
+    },
+  });
 
   return (
     <S.QuestionWrapper>
@@ -47,8 +51,13 @@ const QuestionItem = ({ item }) => {
           alt=""
           onClick={() => setInputOpen(!inputOpen)}
         />
+        <button onMouseDown={listen} onMouseUp={stop}>
+          🎤
+        </button>
       </div>
-      <QuestionModal />
+      <S.InputBox>
+        <textarea placeholder="모의 면접 답변란" value={value}></textarea>
+      </S.InputBox>
     </S.QuestionWrapper>
   );
 };
