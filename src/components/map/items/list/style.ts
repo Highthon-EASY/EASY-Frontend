@@ -132,12 +132,12 @@ export const QuestionWrapper = styled.div`
   }
 `;
 
-export const InputBox = styled.div<Props>`
-  display: "flex";
-  `;
-
 export const ImgContiner = styled.div`
   display: flex;
   margin-top: 10px;
   margin-bottom: 2px;
+`;
+
+export const InputBox = styled.div<Props>`
+  display: "flex";
 `;

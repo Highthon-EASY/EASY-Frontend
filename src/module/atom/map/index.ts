@@ -21,20 +21,14 @@ export const listdata = [
     y: "",
   },
   {
-    title: "맹그로브",
-    location: "서울특별시 서초구 나루터로 76",
-    x: "",
-    y: "",
-  },
-  {
-    title: "카카오 본사",
-    location: "제주 제주시 첨단로 242",
-    x: "",
-    y: "",
-  },
-  {
     title: "opgg",
     location: "서울특별시 강남구 언주로 637 싸이칸홀딩스타워",
+    x: "",
+    y: "",
+  },
+  {
+    title: "맹그로브 숭인",
+    location: "서울특별시 종로구 지봉로12길 17",
     x: "",
     y: "",
   },
@@ -47,13 +41,6 @@ export const listdata = [
   {
     title: "맹그로브 신설",
     location: "서울특별시 동대문구 왕산로 22 맹그로브 신설점",
-    x: "",
-    y: "",
-  },
-
-  {
-    title: "맹그로브 숭인",
-    location: "서울특별시 종로구 지봉로12길 17",
     x: "",
     y: "",
   },
