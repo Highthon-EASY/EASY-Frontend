@@ -8,20 +8,21 @@ export const FeedContainer = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  witdh: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
+  position: absolute;
+  width: 100%;
 `;
 
 export const CategoryList = styled.div`
-  width: 30%;
+  width: 25%;
   height: 100vh;
   background: white;
-  border: 1px solid red;
 
   ul {
     margin-top: 60px;
+    align-content: flex-start;
 
     li:nth-child(1) {
       font-weight: 600;
@@ -37,6 +38,10 @@ export const CategoryList = styled.div`
       box-sizing: border-box;
       border-bottom: 1px solid #ececec;
 
+      img {
+        width: 20px;
+      }
+
       span {
         margin-left: 10px;
         font-size: 12px;
@@ -50,6 +55,8 @@ export const FeedWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 60px;
+  align-content: flex-start;
+  flex-direction: row;
 `;
 
 export const FeedItem = styled.div`
@@ -60,7 +67,7 @@ export const FeedItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   display: flex;
-  width: 400px;
+  width: 30%;
   height: 180px;
   border: 0.5px solid;
   border-color: #cdcdcd;
@@ -69,7 +76,7 @@ export const FeedItem = styled.div`
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 
   #title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     margin-left: 2px;
   }
@@ -88,6 +95,11 @@ export const FeedItem = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    
+    .user-info-box{
+      
+    }
 
     span {
       margin-right: 10px;

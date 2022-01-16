@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { ToastSuccess } from "../../../lib/hook/toastHook";
+import { modalOpenState } from "../../../module/atom/feed";
 import * as S from "./style";
 
 const FeedPost = () => {
+  const [modal, setModal] = useRecoilState(modalOpenState);
   const [inputs, setInpust] = useState({
     title: "",
     content: "",
@@ -25,7 +29,7 @@ const FeedPost = () => {
   }, [inputs]);
 
   return (
-    <S.PostWrapper>
+    <S.PostWrapper modal={modal}>
       <S.PostBox>
         <div className="select-box">
           <h4 id="title_category">카테고리 선택</h4>
@@ -54,7 +58,14 @@ const FeedPost = () => {
             onChange={(e) => onChangeHandler(e)}
           />
         </div>
-        <button>피드 작성</button>
+        <button
+          onClick={() => {
+            setModal(false);
+            ToastSuccess("피드가 작성되었습니다.");
+          }}
+        >
+          피드 작성
+        </button>
       </S.PostBox>
     </S.PostWrapper>
   );

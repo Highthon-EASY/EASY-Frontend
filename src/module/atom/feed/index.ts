@@ -422,3 +422,8 @@ export const etcData = [
     date: "3일 전",
   },
 ];
+
+export const modalOpenState = atom<boolean>({
+  key: "modalOpenState",
+  default: false,
+});

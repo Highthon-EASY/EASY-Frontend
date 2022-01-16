@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Header } from "..";
-import { feedData } from "../../module/atom/feed";
+import { useRecoilState } from "recoil";
+import { FeedPost, Header } from "..";
+import { feedData, FeedListState } from "../../module/atom/feed";
+import FeedHeader from "../common/header/FeedHeader";
 import FeedItem from "./FeedItem";
 import * as S from "./style";
 
@@ -29,7 +31,7 @@ const list = [
 
 const FeedPage = () => {
   const [selected, setSelected] = useState<number>(1);
-  const [img, setImg] = useState<boolean>(false);
+  const [listValue, setListValue] = useRecoilState(FeedListState);
 
   const selectedHandlerColor = (item: any) => {
     setSelected(item.id);
@@ -37,7 +39,8 @@ const FeedPage = () => {
 
   return (
     <S.FeedContainer>
-      <Header />
+      <FeedHeader />
+      <FeedPost />
       <S.ContentWrapper>
         <S.CategoryList>
           <ul>

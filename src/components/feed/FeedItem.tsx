@@ -18,10 +18,11 @@ const FeedItem = ({ item }: Props) => {
         ))}
       </div>
       <div className="user-info">
-        <span>by 익명 사용자</span>
-        <span>{item.date}</span>
-      </div>
-      <div className="like_button">
+        <div className="user-info-box">
+          <span>by 익명 사용자</span>
+          <span>{item.date}</span>
+        </div>
+
         <img
           src={heart ? "/assets/pullheart.svg" : "/assets/heart.svg"}
           onClick={() => setHeart(!heart)}
