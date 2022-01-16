@@ -24,7 +24,7 @@ export const CategoryList = styled.div`
     margin-top: 60px;
     align-content: flex-start;
 
-    li:nth-child(1) {
+    li:nth-of-type(1) {
       font-weight: 600;
       font-size: 18px;
     }
@@ -52,6 +52,8 @@ export const CategoryList = styled.div`
 `;
 
 export const FeedWrapper = styled.div`
+  width: 100%;
+  overflow: auto;
   display: flex;
   flex-wrap: wrap;
   margin-top: 60px;
@@ -68,7 +70,6 @@ export const FeedItem = styled.div`
   justify-content: space-between;
   display: flex;
   width: 30%;
-  height: 180px;
   border: 0.5px solid;
   border-color: #cdcdcd;
   border-radius: 5px;
@@ -96,20 +97,19 @@ export const FeedItem = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
-    .user-info-box{
-      
+
+    .user-info-box {
     }
 
     span {
       margin-right: 10px;
     }
-    span:nth-child(1) {
+    span:nth-of-type(1) {
       color: #787878;
       font-size: 12px;
     }
 
-    span:nth-child(2) {
+    span:nth-of-type(2) {
       color: #b7b7b7;
       font-size: 10px;
     }
