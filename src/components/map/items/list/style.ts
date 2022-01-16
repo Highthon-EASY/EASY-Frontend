@@ -19,12 +19,13 @@ export const ListWrapper = styled.div`
     padding: 30px;
     box-sizing: border-box;
     border-bottom: 1px solid #ececec;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 20.27px;
   }
 `;
 
 export const ListItemBox = styled.div`
-  padding: 30px;
+  padding: 25px;
   box-sizing: border-box;
   border-bottom: 1px solid #ececec;
   display: flex;
