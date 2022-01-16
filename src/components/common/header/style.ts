@@ -36,6 +36,15 @@ export const HeaderWrapper = styled.div`
         margin: 0 30px;
         width: fit-content;
         text-align: center;
+      }
+
+      .map {
+        padding: 15px;
+        border-bottom: 2px solid #514cf6;
+      }
+
+      .feed {
+        padding: 15px;
         border-bottom: 2px solid #514cf6;
       }
     }
