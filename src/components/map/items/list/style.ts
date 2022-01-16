@@ -129,5 +129,6 @@ export const QuestionWrapper = styled.div`
 
 export const ImgContiner = styled.div`
   display: flex;
-  margin-top: 4px;
+  margin-top: 10px;
+  margin-bottom: 2px;
 `;
