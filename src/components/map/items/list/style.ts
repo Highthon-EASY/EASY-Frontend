@@ -46,6 +46,11 @@ export const ListItemBox = styled.div`
       font-size: 14px;
     }
   }
+  img {
+    :hover {
+      cursor: pointer;
+    }
+  }
 
   :hover {
     background: #fafaff;
