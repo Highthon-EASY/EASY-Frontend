@@ -80,6 +80,16 @@ export const ModalWrapper = styled.div<Props>`
   box-sizing: border-box;
   overflow-y: auto;
 
+  .div {
+    margin-left: 80px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: cetner;
+    height: 100vh;
+    weight: 100%;
+  }
+
   .border {
     width: 30px;
     height: 4px;

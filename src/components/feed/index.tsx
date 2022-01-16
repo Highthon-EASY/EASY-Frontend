@@ -85,6 +85,7 @@ const FeedPage = () => {
         </S.CategoryList>
 
         <S.FeedWrapper>
+          {/* <div className="div">로그인 후 이용해 주세요.</div> */}
           {listValue.map((item: any, index: number) => (
             <FeedItem key={index} item={item} />
           ))}

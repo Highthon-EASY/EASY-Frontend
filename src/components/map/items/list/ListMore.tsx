@@ -16,13 +16,14 @@ const ListMore = () => {
       title: "지원하시게 된 동기를 말씀해주세요.",
     },
     {
-      title:
-        "React의 장점과 단점은 무엇이 있을까요? 또 React는 현재 그 단점을 인지하고 있을까요?",
+      title: "이번 프로젝트에 recoil을 사용하신 이유는 무엇인가요?",
     },
   ];
 
   return (
     <S.ModalWrapper modal={modal}>
+      {/* <div className="div">로그인 후 이용해 주세요.</div> */}
+
       <div className="border" />
       <div className="field-box">
         <span>면접 분야</span>
