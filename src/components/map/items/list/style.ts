@@ -19,12 +19,13 @@ export const ListWrapper = styled.div`
     padding: 30px;
     box-sizing: border-box;
     border-bottom: 1px solid #ececec;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 20.27px;
   }
 `;
 
 export const ListItemBox = styled.div`
-  padding: 30px;
+  padding: 25px;
   box-sizing: border-box;
   border-bottom: 1px solid #ececec;
   display: flex;
@@ -44,6 +45,11 @@ export const ListItemBox = styled.div`
     span:nth-of-type(2) {
       color: #7a7a7a;
       font-size: 14px;
+    }
+  }
+  img {
+    :hover {
+      cursor: pointer;
     }
   }
 
@@ -72,6 +78,7 @@ export const ModalWrapper = styled.div<Props>`
   transform: ${({ modal }) => (modal ? `translateX(100%)` : `translateX(0)`)};
   padding: 50px;
   box-sizing: border-box;
+  overflow-y: auto;
 
   .border {
     width: 30px;
@@ -82,6 +89,7 @@ export const ModalWrapper = styled.div<Props>`
   }
 
   .field-box {
+    overflow-y: auto;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -93,8 +101,6 @@ export const ModalWrapper = styled.div<Props>`
 
     .interview-list {
       height: 500px;
-      overflow: auto;
-
       li {
         margin-left: 7%;
         margin-top: 10px;
@@ -108,7 +114,7 @@ export const QuestionWrapper = styled.div`
     cursor: pointer;
   }
   & textarea {
-    margin-top: 10px;
+    margin-top: 2px;
     border-radius: 5px;
     width: 100%;
     padding: 10px;
@@ -116,8 +122,22 @@ export const QuestionWrapper = styled.div`
     border: 0.5px solid #aeaeae;
     resize: none;
   }
+  img {
+    margin-left: 10px;
+  }
+  input {
+    margin-left: 12px;
+    border: none;
+    background: none;
+  }
 `;
 
 export const InputBox = styled.div<Props>`
   display: "flex";
+  `;
+
+export const ImgContiner = styled.div`
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 2px;
 `;

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const MapWrapper = styled.div``;
 
 export const MapContainer = styled.div`
-  width: 100%;
+  width: 113%;
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -13,5 +13,5 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  width: 30%;
+  width: 400px;
 `;
