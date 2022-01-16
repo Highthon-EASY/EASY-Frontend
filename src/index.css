@@ -25,3 +25,21 @@ code {
 .list-container {
   width: 30%;
 }
+
+.my {
+  background-color: #f9784f;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 16px;
+}
+
+.ico {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  padding: 5px 10px;
+  background: #4f65f9;
+  border-radius: 16px;
+}

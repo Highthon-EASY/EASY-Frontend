@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import { SearchMapApi } from "../../../../lib/api/searchMapApi";
-import { CompanyType } from "../../../../lib/interface/CompanyType";
-import { listdata } from "../list/List";
+import { CompanyType, MapListType } from "../../../../lib/interface/CompanyType";
+import { MapListState } from "../../../../module/atom/map";
 
 interface resType {
   x: string;
@@ -13,6 +14,7 @@ const Map = () => {
   const [myLocation, setMyLocation] = useState<
     { latitude: number; longitude: number } | string
   >("");
+  const [company, setCompany] = useRecoilState(MapListState);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -37,45 +39,94 @@ const Map = () => {
       });
 
       // 내 장소 위치
-      const test = new naver.maps.Marker({
+      new naver.maps.Marker({
         position: new naver.maps.LatLng(currentPosition[0], currentPosition[1]),
         map: map,
         icon: {
-          url: "w7.pngwing.com/pngs/731/25/png-transparent-location-icon-computer-icons-google-map-maker-marker-pen-cartodb-map-marker-heart-logo-color-thumbnail.png",
+          url: "/assets/marker.svg",
           size: new naver.maps.Size(33, 44),
           origin: new naver.maps.Point(0, 0),
           anchor: new naver.maps.Point(11, 35),
         },
       });
 
-      listdata.map((item: CompanyType, idx: number) => {
-        SearchMapApi(item.location).then((res: any) => {
+      new naver.maps.Marker({
+        position: new naver.maps.LatLng(currentPosition[0], currentPosition[1]),
+        map: map,
+        icon: {
+          content: [`<span class="my">현재 나의 위치</span>`].join(""),
+          size: new naver.maps.Size(38, 58),
+          anchor: new naver.maps.Point(19, 58),
+        },
+      });
+
+      new naver.maps.Marker({
+        position: new naver.maps.LatLng(127.0255319999996, 37.5744931999997),
+        map: map,
+        icon: {
+          url: "/assets/marker.svg",
+          size: new naver.maps.Size(33, 44),
+          origin: new naver.maps.Point(0, 0),
+          anchor: new naver.maps.Point(11, 35),
+        },
+      });
+
+      new naver.maps.Marker({
+        position: new naver.maps.LatLng(127.0255319999996, 37.5744931999997),
+        map: map,
+        icon: {
+          content: [`<span class="ico">오누이</span>`].join(""),
+          size: new naver.maps.Size(38, 58),
+          anchor: new naver.maps.Point(19, 58),
+        },
+      });
+
+      new naver.maps.Marker({
+        position: new naver.maps.LatLng(126.5706052, 33.4507313),
+        map: map,
+        icon: {
+          url: "/assets/marker.svg",
+          size: new naver.maps.Size(33, 44),
+          origin: new naver.maps.Point(0, 0),
+          anchor: new naver.maps.Point(11, 35),
+        },
+      });
+
+      new naver.maps.Marker({
+        position: new naver.maps.LatLng(126.5706052, 33.4507313),
+        map: map,
+        icon: {
+          content: [`<span class="ico">카카오 본사</span>`].join(""),
+          size: new naver.maps.Size(38, 58),
+          anchor: new naver.maps.Point(19, 58),
+        },
+      });
+
+      company.map((item: MapListType, idx: number) => {
+        SearchMapApi(item?.location).then((res: any) => {
           console.log(res);
+
+          new naver.maps.Marker({
+            position: new naver.maps.LatLng(res?.y, res?.x),
+            map: map,
+            icon: {
+              url: "/assets/marker.svg",
+              size: new naver.maps.Size(33, 44),
+              origin: new naver.maps.Point(0, 0),
+              anchor: new naver.maps.Point(11, 35),
+            },
+          });
 
           new naver.maps.Marker({
             position: new naver.maps.LatLng(res.y, res.x),
             map: map,
+            icon: {
+              content: [`<span class="ico">${item.title}</span>`].join(""),
+              size: new naver.maps.Size(38, 58),
+              anchor: new naver.maps.Point(19, 58),
+            },
           });
         });
-      });
-
-      var infoWindowElement = [`<span>맹그로브 신설</span>`].join("");
-
-      var infowindow = new naver.maps.InfoWindow({
-        content: infoWindowElement[0],
-
-        borderWidth: 0,
-        disableAnchor: true,
-        backgroundColor: "transparent",
-
-        pixelOffset: new naver.maps.Point(0, -28),
-      });
-
-      naver.maps.Event.addListener(map, "click", function (e) {
-        var latlng = e.latlng;
-
-        //infoWindowElement.find("em").text(latlng.toString());
-        infowindow.open(map, latlng);
       });
     }
   }, [myLocation]);

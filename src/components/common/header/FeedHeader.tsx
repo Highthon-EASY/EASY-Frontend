@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState, useSetRecoilState } from "recoil";
+import { categoryState } from "../../../module/atom";
 import { modalOpenState } from "../../../module/atom/feed";
 import { modalState } from "../../../module/atom/map";
 import * as S from "./style";
@@ -10,6 +11,7 @@ const FeedHeader = () => {
   const navi = useNavigate();
   const name = localStorage.getItem("userName");
   const [modal, setModal] = useRecoilState(modalOpenState);
+  const [category, setCategory] = useRecoilState(categoryState);
 
   return (
     <S.HeaderWrapper>
@@ -19,7 +21,7 @@ const FeedHeader = () => {
       <div className="list-wrap">
         <div className="list-box">
           <Link to="/">지도</Link>
-          <Link className="feed" to="/feed">
+          <Link className="feed" to={`/feed?category=${category}`}>
             피드
           </Link>
         </div>
