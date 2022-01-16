@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
-import { FeedPost, Header } from "..";
-import { feedData, FeedListState } from "../../module/atom/feed";
+import { FeedPost } from "..";
+import { FeedListState } from "../../module/atom/feed";
 import FeedHeader from "../common/header/FeedHeader";
 import FeedItem from "./FeedItem";
 import * as S from "./style";
@@ -45,8 +45,8 @@ const FeedPage = () => {
         <S.CategoryList>
           <ul>
             <li>Category</li>
-            {list.map((item) => (
-              <li onClick={() => selectedHandlerColor(item)}>
+            {list.map((item, idx) => (
+              <li key={idx} onClick={() => selectedHandlerColor(item)}>
                 <img
                   src="/assets/hoverArrow.svg"
                   alt=""
@@ -63,7 +63,7 @@ const FeedPage = () => {
         </S.CategoryList>
 
         <S.FeedWrapper>
-          {feedData.map((item: any, index: number) => (
+          {listValue.map((item: any, index: number) => (
             <FeedItem key={index} item={item} />
           ))}
         </S.FeedWrapper>
