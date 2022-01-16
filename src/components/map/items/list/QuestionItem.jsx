@@ -45,19 +45,18 @@ const QuestionItem = ({ item }) => {
     <S.QuestionWrapper>
       <div className="interview-box">
         <li onClick={(e) => test(e)}>{item.title}</li>
-        <img src="/assets/ear.svg" alt="" onClick={(e) => test(e)} />
-        <img
-          src="/assets/document.svg"
-          alt=""
-          onClick={() => setInputOpen(!inputOpen)}
-        />
-        <button onMouseDown={listen} onMouseUp={stop}>
-          🎤
-        </button>
+        <S.ImgContiner>
+          <img src="/assets/ear.svg" alt="" onClick={(e) => test(e)} />
+          <img src="/assets/document.svg" alt="" />
+          <input
+            type="button"
+            onMouseDown={listen}
+            onMouseUp={stop}
+            value="🎤"
+          />
+        </S.ImgContiner>
       </div>
-      <S.InputBox>
-        <textarea placeholder="모의 면접 답변란" value={value}></textarea>
-      </S.InputBox>
+      <textarea type="text" placeholder="모의 면접 답변란" value={value} />
     </S.QuestionWrapper>
   );
 };
