@@ -12,12 +12,13 @@ const ListItem = ({ item }: Props) => {
   const [modal, setModal] = useRecoilState(questionModalState);
 
   return (
-    <S.ListItemBox>
+    <S.ListItemBox onClick={() => setModal(!modal)}>
       <div className="item-info">
         <span>{item.title}</span>
         <span>{item.location}</span>
       </div>
-      <S.arrow onClick={() => setModal(!modal)}>{"➡️"}</S.arrow>
+
+      <img src="/assets/arrow.svg" alt="" />
     </S.ListItemBox>
   );
 };

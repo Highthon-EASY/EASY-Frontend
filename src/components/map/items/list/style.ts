@@ -88,7 +88,7 @@ export const ModalWrapper = styled.div<Props>`
     display: flex;
     flex-direction: column;
 
-    span:nth-child(1) {
+    span:nth-of-type(1) {
       font-size: 18px;
       font-weight: 500;
     }
