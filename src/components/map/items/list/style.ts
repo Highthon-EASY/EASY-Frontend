@@ -52,6 +52,16 @@ export const ListItemBox = styled.div`
   }
 `;
 
+export const arrow = styled.div`
+  color: #dcdcdc;
+  width: 15px;
+  :hover {
+    width: 19px;
+    color: #514cf6;
+    cursor: pointer;
+  }
+`;
+
 export const ModalWrapper = styled.div<Props>`
   width: 100%;
   height: 100vh;
