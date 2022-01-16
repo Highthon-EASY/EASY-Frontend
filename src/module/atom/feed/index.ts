@@ -8,7 +8,7 @@ export const FeedListState = atom({
 export const feedData = [
   {
     id: 1,
-    title: "면접에서 자주 물어보는 질문 리스트 TOP 3",
+    title: "면접 단골 질문 TOP3",
     name: "익명의 사용자",
     content: [
       { title: "sdfsfsfsf" },
@@ -55,3 +55,8 @@ export const feedData = [
     heart: false,
   },
 ];
+
+export const modalOpenState = atom<boolean>({
+  key: "modalOpenState",
+  default: false,
+});

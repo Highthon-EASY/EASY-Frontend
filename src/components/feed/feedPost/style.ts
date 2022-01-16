@@ -1,15 +1,18 @@
 import styled from "@emotion/styled";
 
 interface Props {
-  border: boolean;
+  border?: boolean;
+  modal?: boolean;
 }
 
-export const PostWrapper = styled.div`
+export const PostWrapper = styled.div<Props>`
   margin: 0 auto;
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: ${({ modal }) => (modal ? "flex" : "none")};
   align-items: center;
+  background: rgba(107, 107, 107, 0.58);
+  z-index: 30;
 `;
 
 export const PostBox = styled.div`
@@ -17,7 +20,7 @@ export const PostBox = styled.div`
   display: inline-block;
   width: 796px;
   height: 719px;
-  background-color: yellow;
+  background-color: white;
   border-radius: 5px;
 
   .title_feed {
