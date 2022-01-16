@@ -47,6 +47,11 @@ export const ListItemBox = styled.div`
       font-size: 14px;
     }
   }
+  img {
+    :hover {
+      cursor: pointer;
+    }
+  }
 
   :hover {
     background: #fafaff;
@@ -131,4 +136,8 @@ export const ImgContiner = styled.div`
   display: flex;
   margin-top: 10px;
   margin-bottom: 2px;
+`;
+
+export const InputBox = styled.div<Props>`
+  display: "flex";
 `;

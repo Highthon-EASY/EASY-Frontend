@@ -11,11 +11,11 @@ import {
   InterviewPage,
   FeedPost,
 } from "./components";
-        
+
 function App() {
   return (
     <BrowserRouter>
-    <ToastContainer />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<MapPage />} />
         <Route path="/signin" element={<SignPage />} />

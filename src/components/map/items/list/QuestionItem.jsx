@@ -6,6 +6,7 @@ import { inputModalState } from "../../../../module/atom/map";
 
 const QuestionItem = ({ item }) => {
   const [inputOpen, setInputOpen] = useRecoilState(inputModalState);
+  const [value, setValue] = useState("");
 
   function speak(text, opt_prop) {
     if (
@@ -34,16 +35,11 @@ const QuestionItem = ({ item }) => {
     });
   };
 
-  const [value, setValue] = useState("");
-  // const [inputOpen, setInputOpen] = useRecoilState(inputModalState);
-
   const { listen, stop } = useSpeechRecognition({
     onResult: (result) => {
       setValue(result);
     },
   });
-
-  console.log(inputOpen);
 
   return (
     <S.QuestionWrapper>

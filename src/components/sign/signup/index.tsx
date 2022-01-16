@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ToastSuccess } from "../../../lib/hook/toastHook";
 import * as S from "../style";
 
 const SignUpPage = () => {
+  const navi = useNavigate();
+
   const [inputs, setInpust] = useState({
     name: "",
     school: "",
@@ -25,6 +29,13 @@ const SignUpPage = () => {
     inputs.email.length > 0 ? setEmail(true) : setEmail(false);
     inputs.school.length > 0 ? setSchool(true) : setSchool(false);
   }, [inputs]);
+
+  const local = () => {
+    ToastSuccess("회원가입에 성공했습니다.");
+    setTimeout(() => {
+      navi("/signin");
+    }, 2000);
+  };
 
   return (
     <S.SignWrapper>
@@ -57,7 +68,7 @@ const SignUpPage = () => {
           />
         </div>
 
-        <button>회원가입</button>
+        <button onClick={local}>회원가입</button>
         <a href="/signin">이미 회원이신가요?</a>
       </S.SignBox>
     </S.SignWrapper>

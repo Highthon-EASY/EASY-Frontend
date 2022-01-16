@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as S from "./style";
 import { CategorySelector } from "../constant/interview";
 import DaumPost from "./DaumPost";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { locationState, modalState } from "../../module/atom/interview";
-import { reviewData, reviewListState } from "../../module/atom/interview";
-import { postModalState } from "../../module/atom/map";
+import { reviewData } from "../../module/atom/interview";
+import { MapListState, postModalState } from "../../module/atom/map";
 import { ToastSuccess } from "../../lib/hook/toastHook";
 
 const InterviewPage = () => {
-  const [questionInput, setQuestionInput] = useState<number>(1);
   const [modal, setModal] = useRecoilState(modalState);
   const setPostCodeModal = useSetRecoilState(postModalState);
   const [input, setInput] = useRecoilState(reviewData);
-  const [test, setTest] = useRecoilState(reviewListState);
   const [location, setLocation] = useRecoilState<string>(locationState);
+  const [company, setCompany] = useRecoilState(MapListState);
 
   const onChange = (e: any) => {
     const { name, value } = e.target;
@@ -25,12 +24,10 @@ const InterviewPage = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(input);
-  }, [input, location]);
-
   const onsubmit = (e: any) => {
     e.preventDefault();
+
+    setCompany(company.concat(input));
 
     setModal(false);
     ToastSuccess("면접 후기가 등록되었습니다.");
@@ -48,13 +45,13 @@ const InterviewPage = () => {
             name="title"
             value={input.title}
             onChange={(e) => onChange(e)}
-            //onClick={() => setModal(false)}
           ></S.CompanyInput>
           <S.CompanyInput
             name="location"
             type="text"
             value={location}
             placeholder="회사 위치는 어디인가요?"
+            onChange={(e) => setLocation(e.target.value)}
             onClick={() => setPostCodeModal(true)}
             readOnly
           ></S.CompanyInput>
