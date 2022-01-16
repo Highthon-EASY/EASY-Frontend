@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Header } from "..";
-import { feedData } from "../../module/atom/feed";
+import { useRecoilState } from "recoil";
+import { FeedPost } from "..";
+import { FeedListState } from "../../module/atom/feed";
+import FeedHeader from "../common/header/FeedHeader";
 import FeedItem from "./FeedItem";
 import * as S from "./style";
 
@@ -29,7 +31,7 @@ const list = [
 
 const FeedPage = () => {
   const [selected, setSelected] = useState<number>(1);
-  const [img, setImg] = useState<boolean>(false);
+  const [listValue, setListValue] = useRecoilState(FeedListState);
 
   const selectedHandlerColor = (item: any) => {
     setSelected(item.id);
@@ -37,13 +39,14 @@ const FeedPage = () => {
 
   return (
     <S.FeedContainer>
-      <Header />
+      <FeedHeader />
+      <FeedPost />
       <S.ContentWrapper>
         <S.CategoryList>
           <ul>
             <li>Category</li>
-            {list.map((item) => (
-              <li onClick={() => selectedHandlerColor(item)}>
+            {list.map((item, idx) => (
+              <li key={idx} onClick={() => selectedHandlerColor(item)}>
                 <img
                   src="/assets/hoverArrow.svg"
                   alt=""
@@ -60,7 +63,7 @@ const FeedPage = () => {
         </S.CategoryList>
 
         <S.FeedWrapper>
-          {feedData.map((item: any, index: number) => (
+          {listValue.map((item: any, index: number) => (
             <FeedItem key={index} item={item} />
           ))}
         </S.FeedWrapper>
