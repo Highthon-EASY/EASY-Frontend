@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const SearchMapApi = async (query: string) => {
+export const SearchMapApi = async (query: string | undefined) => {
   try {
     const data = await axios(
       `https://map.naver.com/v5/api/search?caller=pcweb&query=${query}&type=all&searchCoord=127.0255319999996;37.5744931999997&page=1&displayCount=20&isPlaceRecommendationReplace=true&lang=ko`

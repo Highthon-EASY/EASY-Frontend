@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DaumPostCode from "react-daum-postcode";
 import * as S from "./style";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -35,15 +35,19 @@ const DaumPost = () => {
   };
 
   return (
-    <S.ModalWrapper modal={modal}>
-      {postcodeModal && (
-        <DaumPostCode
-          style={{ width: "500px", height: "300px" }}
-          onComplete={handleComplete}
-          className="post-code"
-        />
-      )}
-    </S.ModalWrapper>
+    <>
+      <S.ModalWrapper modal={modal}>
+        {postcodeModal && (
+          <>
+            <DaumPostCode
+              style={{ width: "500px", height: "300px" }}
+              onComplete={handleComplete}
+              className="post-code"
+            />
+          </>
+        )}
+      </S.ModalWrapper>
+    </>
   );
 };
 export default DaumPost;

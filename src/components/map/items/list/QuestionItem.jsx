@@ -6,6 +6,7 @@ import { inputModalState } from "../../../../module/atom/map";
 
 const QuestionItem = ({ item }) => {
   const [inputOpen, setInputOpen] = useRecoilState(inputModalState);
+  const [value, setValue] = useState("");
 
   function speak(text, opt_prop) {
     if (
@@ -34,33 +35,29 @@ const QuestionItem = ({ item }) => {
     });
   };
 
-  const [value, setValue] = useState("");
-  // const [inputOpen, setInputOpen] = useRecoilState(inputModalState);
-
   const { listen, stop } = useSpeechRecognition({
     onResult: (result) => {
       setValue(result);
     },
   });
 
-  console.log(inputOpen);
-
   return (
     <S.QuestionWrapper>
       <div className="interview-box">
         <li onClick={(e) => test(e)}>{item.title}</li>
-        <S.ImgContiner>
-          <img src="/assets/ear.svg" alt="" onClick={(e) => test(e)} />
-          <img src="/assets/document.svg" alt="" />
-          <input
-            type="button"
-            onMouseDown={listen}
-            onMouseUp={stop}
-            value="🎤"
-          />
-        </S.ImgContiner>
+        <img src="/assets/ear.svg" alt="" onClick={(e) => test(e)} />
+        <img
+          src="/assets/document.svg"
+          alt=""
+          onClick={() => setInputOpen(!inputOpen)}
+        />
+        <button onMouseDown={listen} onMouseUp={stop}>
+          🎤
+        </button>
       </div>
-      <textarea type="text" placeholder="모의 면접 답변란" value={value} />
+      <S.InputBox>
+        <textarea placeholder="모의 면접 답변란" value={value}></textarea>
+      </S.InputBox>
     </S.QuestionWrapper>
   );
 };

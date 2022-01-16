@@ -46,9 +46,7 @@ const FeedPost = () => {
   const onSubmit = (e: any) => {
     e.preventDefault();
 
-    listValue.unshift(inputs);
-
-    setListValue(listValue);
+    setListValue(listValue.concat(inputs));
 
     setModal(false);
     ToastSuccess("피드가 작성되었습니다.");
@@ -85,8 +83,11 @@ const FeedPost = () => {
             border={content}
             placeholder="내용"
             name="content"
-            value={inputs.content.subContent}
-            onChange={(e) => setContentValue(e.target.value)}
+            value={contentValue}
+            onChange={(e) => {
+              onChangeHandler(e);
+              setContentValue(e.target.value);
+            }}
           />
         </div>
         <button onClick={(e) => onSubmit(e)}>피드 작성</button>
