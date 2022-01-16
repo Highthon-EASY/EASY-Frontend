@@ -72,6 +72,7 @@ export const ModalWrapper = styled.div<Props>`
   transform: ${({ modal }) => (modal ? `translateX(100%)` : `translateX(0)`)};
   padding: 50px;
   box-sizing: border-box;
+  overflow-y: auto;
 
   .border {
     width: 30px;
@@ -82,6 +83,7 @@ export const ModalWrapper = styled.div<Props>`
   }
 
   .field-box {
+    overflow-y: auto;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -93,8 +95,6 @@ export const ModalWrapper = styled.div<Props>`
 
     .interview-list {
       height: 500px;
-      overflow: auto;
-
       li {
         margin-left: 7%;
         margin-top: 10px;
@@ -108,7 +108,7 @@ export const QuestionWrapper = styled.div`
     cursor: pointer;
   }
   & textarea {
-    margin-top: 10px;
+    margin-top: 2px;
     border-radius: 5px;
     width: 100%;
     padding: 10px;
@@ -116,8 +116,17 @@ export const QuestionWrapper = styled.div`
     border: 0.5px solid #aeaeae;
     resize: none;
   }
+  img {
+    margin-left: 10px;
+  }
+  input {
+    margin-left: 12px;
+    border: none;
+    background: none;
+  }
 `;
 
-export const InputBox = styled.div<Props>`
-  display: ${(props) => (props.inputOpen ? "flex" : "none")};
+export const ImgContiner = styled.div`
+  display: flex;
+  margin-top: 4px;
 `;
