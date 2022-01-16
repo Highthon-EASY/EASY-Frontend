@@ -19,12 +19,13 @@ export const ListWrapper = styled.div`
     padding: 30px;
     box-sizing: border-box;
     border-bottom: 1px solid #ececec;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 20.27px;
   }
 `;
 
 export const ListItemBox = styled.div`
-  padding: 30px;
+  padding: 25px;
   box-sizing: border-box;
   border-bottom: 1px solid #ececec;
   display: flex;
@@ -44,6 +45,11 @@ export const ListItemBox = styled.div`
     span:nth-of-type(2) {
       color: #7a7a7a;
       font-size: 14px;
+    }
+  }
+  img {
+    :hover {
+      cursor: pointer;
     }
   }
 

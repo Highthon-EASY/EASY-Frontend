@@ -27,6 +27,11 @@ export const CategoryList = styled.div`
     li:nth-of-type(1) {
       font-weight: 600;
       font-size: 18px;
+      pointer-events: none;
+
+      :hover {
+        background: white;
+      }
     }
 
     li {
@@ -46,6 +51,11 @@ export const CategoryList = styled.div`
         margin-left: 10px;
         font-size: 12px;
         color: #989898;
+      }
+
+      :hover {
+        background: #fafaff;
+        transition: all 0.3s;
       }
     }
   }
